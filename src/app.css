@@ -1,0 +1,402 @@
+/* dashboard.css */
+.body{
+    margin:0px !important;
+}
+.dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #371a1a 0%, #870909 50%, #650a06 100%);
+  color: white;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Stars and ratings */
+.stars-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.rating-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.star-icon {
+  width: 16px;
+  height: 16px;
+  fill: #fbbf24;
+  color: #fbbf24;
+}
+
+.rating-logo {
+  height: 20px;
+  border-radius: 4px;
+}
+
+.g2-logo {
+  background: white;
+  color: #1f2937;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+/* Main content */
+.main-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20rem;
+}
+
+.hero-text {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.hover-word {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.4;
+}
+
+.hover-word:hover,
+.hover-word.active {
+  opacity: 1;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Charts container */
+.charts-container {
+  position:relative;
+  height: 400px;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.chart-widget {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 1.5rem;
+  color: #1f2937;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Income chart */
+.trending-styles-chart {
+  width: 280px;
+  min-height: 300px;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.chart-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.percentage-change {
+  color: #10b981;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.settings-icon {
+  width: 20px;
+  height: 20px;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.chart-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.chart-subtitle {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.bar-chart {
+  display: flex;
+  align-items: end;
+  gap: 4px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.bar {
+  width: 12px;
+  background: linear-gradient(to top, #3b82f6, #60a5fa);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.bar:hover {
+  transform: scaleY(1.1);
+  background: linear-gradient(to top, #1d4ed8, #3b82f6);
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Expenses chart */
+.comfort-distribution-chart {
+  width: 250px;
+  text-align: center;
+}
+
+.donut-chart {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.legend-color.insurance { background: #10b981; }
+.legend-color.wages { background: #3b82f6; }
+.legend-color.rent { background: #8b5cf6; }
+.legend-color.legal { background: #06b6d4; }
+.legend-color.other { background: #e5e7eb; }
+
+/* Revenue chart */
+.fit-satisfaction-chart {
+  width: 200px;
+  text-align: center;
+}
+
+.chart-value-large {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.revenue-visual {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.revenue-bar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.revenue-fill {
+  height: 100%;
+  background: linear-gradient(to right, #3b82f6, #10b981);
+  border-radius: 4px;
+  transition: width 0.8s ease;
+}
+
+.revenue-circle {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* AI Badge */
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  margin: 2rem 0;
+  backdrop-filter: blur(10px);
+  font-weight: 500;
+}
+
+.ai-icon {
+  font-size: 1.2rem;
+}
+
+/* CTA Button */
+.cta-button {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1f2937;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 1rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* See what link */
+.see-what-link {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.see-what-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+  
+  .stars-container {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .rating-item {
+    font-size: 0.8rem;
+  }
+  
+  .hero-text {
+    font-size: clamp(2rem, 10vw, 4rem);
+    margin-bottom: 1.5rem;
+  }
+  
+  .charts-container {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .chart-widget {
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 1rem;
+  }
+  
+  .trending-styles-chart,
+  .comfort-distribution-chart,
+  .fit-satisfaction-chart {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .stars-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .chart-widget {
+    padding: 1rem;
+  }
+  
+  .bar-chart {
+    height: 60px;
+  }
+  
+  .bar {
+    width: 10px;
+  }
+}
